@@ -4,7 +4,7 @@ const parser = new Parser();
 
 async function getPosts() {
   // ΑΝΤΙΚΑΤΑΣΤΗΣΕ το URL παρακάτω με το δικό σου blogspot URL
-  const FEED_URL = 'https://dev.blackdiamond.me/feeds/posts/default?alt=rss';
+  const FEED_URL = 'https://project-econews.blogspot.com/feeds/posts/default?alt=rss';
   const feed = await parser.parseURL(FEED_URL);
   return feed.items;
 }
