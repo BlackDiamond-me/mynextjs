@@ -10,7 +10,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="el">
-      <body>{children}</body>
+    <body className="antialiased">
+  <style>{`
+    img { max-width: 100%; height: auto; border-radius: 8px; }
+    iframe { max-width: 100%; }
+    .prose { overflow-wrap: break-word; }
+  `}</style>
+  {children}
+</body>
     </html>
   )
 }
