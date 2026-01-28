@@ -16,8 +16,8 @@ export default async function Home() {
     <div style={{ fontFamily: 'sans-serif', padding: '40px', maxWidth: '800px', margin: '0 auto' }}>
       <h1>Το Blog μου</h1>
       <hr />
-      {posts.map((post) => (
-        <article key={post.guid} style={{ marginBottom: '40px' }}>
+{posts?.map((post: any) => (
+  <article key={post.guid} style={{ marginBottom: '40px' }}>
           <h2>{post.title}</h2>
           <small>{post.pubDate}</small>
           <div dangerouslySetInnerHTML={{ __html: post.content || '' }} style={{ marginTop: '20px' }} />
