@@ -1,3 +1,4 @@
+export const revalidate = 3600; // Ανανέωση κάθε 1 ώρα (3600 δευτερόλεπτα)
 import Parser from 'rss-parser';
 
 const parser = new Parser();
