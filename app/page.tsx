@@ -24,9 +24,11 @@ export default async function Home() {
 
         <div className="grid gap-8">
           {posts?.map((post: any) => {
-            // Δημιουργία περίληψης χωρίς tags
             const summary = post.contentSnippet?.substring(0, 180) || 
                            post.content?.replace(/<[^>]*>/g, '').substring(0, 180);
+
+            // Εξαγωγή του ID από το GUID του Blogger (π.χ. tag:blogger.com,1999:blog-XXXX.post-YYYY)
+            const postId = post.guid.split('-').pop();
 
             return (
               <article key={post.guid || post.link} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow">
@@ -42,9 +44,7 @@ export default async function Home() {
                   </p>
                   <div className="mt-auto">
                     <a 
-                      href={post.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                      href={`/post/${postId}`} 
                       className="inline-flex items-center px-5 py-2.5 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
                     >
                       Διαβάστε περισσότερα
